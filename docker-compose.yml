@@ -25,5 +25,5 @@ services:
       cassandra:
         condition: service_healthy
     volumes:
-      - ./src/main/resources/cassandra_schema.cql:/schema.cql
+      - ./schema.cql:/schema.cql
     command: /bin/bash -c "echo loading cassandra keyspace && cqlsh cassandra -f /schema.cql"
